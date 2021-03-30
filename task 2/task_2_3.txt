@@ -1,0 +1,4 @@
+I would use mysql database for storing product data and the history of import/update operation.
+Also, I would take Laravel for making requests to Shopify through product API.
+In admin panel we could add application through which we could start/stop import/update.
+

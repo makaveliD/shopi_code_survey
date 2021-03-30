@@ -1,0 +1,68 @@
+{% comment %}
+This section can be added to a page by tag {% section 'task_1' %}. Also, you can
+add this section on the main page by customizer.
+Example of view in task_1.html
+{%endcomment %}
+
+
+{% if section.blocks.size > 0 %}
+  <div class="slideshow">
+    {% for block in section.blocks %}
+      <div>
+        <div class="slide">
+          <img src="{{ block.settings.image | img_url: '200x' }}" alt="{{ block.settings.header_text }}"
+               class="slide_img">
+          <div class="slide_header">{{ block.settings.header_text }}</div>
+          <div class="slide_body">{{ block.settings.header_body }}</div>
+          <a href="{{ block.settings.button_url }}" class="slide_link">{{ block.settings.button_text }}</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Slideshow",
+  "blocks": [
+    {
+      "type": "slide_block",
+      "name": "Slide item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background image"
+        },
+        {
+          "type": "text",
+          "id": "header_text",
+          "label": "Header text",
+          "default": "Header"
+        },{
+          "type": "text",
+          "id": "header_body",
+          "label": "Body text",
+          "default": "Body"
+        },{
+          "type": "url",
+          "id": "button_url",
+          "label": "Link"
+        },{
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Button"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Slider with images",
+    "category":"Sliders"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,17 @@
+All these tasks we can did with options name, product images, and alt`s of images.
+ For all media files (videos, images, etc.) we can add alt text after the "|" ( https://prnt.sc/10zx9et )
+ which shows the duty of this file.
+Examples:
+ - "alt text | option:Red" - this media file can be loaded only when we select the red option
+ - "alt text | option_swatch:Red" - this image will be displayed on the option swatch box
+ if we need show hex code in a swatch, then we could add postfix for a color option like this https://prnt.sc/10zx2kd
+ Also in liquid, we can check if color options have variant like in alt (3.2 in Code Survey)
+ All images with empty alt, or alt which not matched to any rule will be displayed as usual
+For all of these changes, we can create liquid scripts based on product options, images, and string filters.
+But, if we want to create a more friendly interface we need to use meta fields ( require app installation for managing )
+
+Both of these solutions haven`t bad impact on pagespeed, because neither of them uses javascript
+
+All this functionality we can store in a snippet and render him in product page,
+product snippet (for displaying these on collections page,cart,etc.)
+
